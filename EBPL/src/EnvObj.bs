@@ -1,0 +1,286 @@
+// the Agents position
+Point Pos=[-30,0,0];
+Vector Dir=[0.0,0.0,0.0,0.0];
+Point NextPos=[0,0.0];
+bool TRUE=true;
+bool FALSE=false;
+// The rotation of the Agent in the X plane 
+float xrot=0.0;
+float yrot=-90.0; 
+// The rotation of the Agent in the Z plane 
+float zrot=0.0;
+
+// Vector ADir is the Average direction of the Agent calculated from hits with any agents
+//  in the current bounding sphere radius. This is used with the FlockAvoidDir 
+// weight to set the  Flock avoid Direction
+Vector ADir=[0,0,0,0]; //flock avoid dir
+// Vector CentroidDir is the direction to the flock center from the current agent position.
+//This is multiplied by the Centroid weight 
+Vector CentroidDir=[0,0,0,0];
+
+// bool HitAgent boolean flag set to indicate that the Agent has hit another Agent 
+bool HitAgent=false;
+bool HitEnvObj=false;
+// GLfloat GPYlevel the ground plane level of the Agent 
+float GPYlevel=-20;
+// GLfloat CentroidWeight The weight the CentroidDir vector is multiplied by to calculate
+//the new direction of the Agent so it can flock center 
+float CentroidWeight=72.9;
+//GLfloat FlockAvoidWeight The Weight the FlockAvoidDir vector is multiplied by to calculate
+//the new direction of the Agent when it has hit a member of it's own flock 
+float FlockAvoidWeight=5100.0;
+float EnvAvoidWeight=6129.0;
+float Radius=0.6;
+float Radius2=2.1;
+float MinCentroidDist=6.0;
+Vector CentroidDist=[0,0,0,0] ;
+Vector nVel=[0,0,0,0];
+Vector acceleration=[1,1,1,0];
+Vector force=[0,0,0,0];
+Vector mass=[150,150,150,0];
+Vector EnvAvoidDir=[0,0,0,0];
+Vector Velocity=[0,0,0,0];
+Vector VelDiv=[1,1,1,0];
+float NoiseType=2.0;
+float NoiseScale=1230.0002;
+vector NoiseValue=[0,0,0,0];
+
+InitFunction
+	Randomize Dir 2.0 2.0 2.0;
+    SetGlobalPos Pos;
+	RandomizePos NoiseType 5;
+    Randomize NoiseScale 2000;
+    UseNoise NoiseType NoiseScale;    
+End;
+
+Point Centroid=[10,10,0] ;
+
+DrawFunction
+PushMatrix;
+// Translate to the Agents Position
+    Translate Pos;
+        
+        //Rotate the Agent to the correct orientation
+        RotateX  xrot; 
+        RotateY  yrot; 
+        RotateZ  zrot; 
+		//Set the Colour 
+        Colour 1.0 0.0 0.0;
+        POLYGON ;
+            Vertexf 0.25 -0.1 -0.1;
+            Vertexf 0.25 0.1 0.0;
+            Vertexf -0.25 -0.1 0.0;
+            Vertexf 0.25 -0.1 0.1;
+            Vertexf 0.25 0.1 0.0;
+            Vertexf -0.25 -0.1 0.0
+        glEnd ;
+		// Now draw the Poly's as Lines to give the agent an outline shape */
+        
+        LineSize 1.0;
+        Colour 1.0 1.0 1.0;
+        LINELOOP
+            Vertexf 0.25 -0.1 -0.1 ;
+            Vertexf 0.25 0.1 0.0 ;
+            Vertexf -0.25 -0.1 0.0 ;
+            Vertexf 0.25 -0.1 0.1 ;
+            Vertexf 0.25 0.1 0.0 ;
+            Vertexf -0.25 -0.1 0.0 ;
+        glEnd
+PopMatrix ;
+
+PushMatrix;
+	    // preserve y value
+        Fpush Pos y;
+        PushGPYlevel;
+    	Fpop Pos y;
+        
+		Translate Pos;
+        RotateX  xrot; 
+        RotateY  yrot; 
+        RotateZ  zrot; 
+        Colour 0.2 0.2 0.2;
+        POLYGON ;
+            Vertexf 0.25 -0.1 -0.1 ;
+            Vertexf 0.25 0.1 0.0 ;
+            Vertexf -0.25 -0.1 0.0 ;
+            Vertexf 0.25 -0.1 0.1 ;
+            Vertexf 0.25 0.1 0.0 ;
+            Vertexf -0.25 -0.1 0.0 ;
+        glEnd;
+PopMatrix;
+fPop Pos y;
+
+End;
+
+
+float Ylevel=0.0;
+float gpy=0.0;
+UpdateFunction
+	SetGlobalCollideFlag FALSE;    
+    Call UpdateAgainstCentroid;
+    Call Move;
+    Call CalcDir;
+    Call CalcAngle;
+    
+    PushGPYlevel;
+    fpop gpy;
+    fpush Pos y ;
+    fpop Ylevel ;
+    
+     if Ylevel <= gpy
+     {
+      SetD Dir y 1; 
+     }
+
+    SetGlobalPos Pos;
+    SetD ADir 0 0 0;
+    SetD CentroidDir 0 0 0; 
+    SetD EnvAvoidDir 0 0 0;
+End;
+
+
+
+float dist=0.0;
+
+Function UpdateAgainstCentroid;
+ GetGlobalCentroid CentroidDir;
+ Sub CentroidDir Pos;
+ Length CentroidDir ;
+ fpop dist ;
+ 
+ ifelse dist > MinCentroidDist;
+    {
+    	
+        GetGlobalCentroid CentroidDir ;
+        Sub CentroidDir Pos;
+        
+    }
+	{
+	SetD CentroidDir 0 0 0 ;
+	}
+       
+End;
+
+// This function calculates the Agents orientation based on the poistion
+// and the NextPos
+// use these for temp storage in the calc angle function
+
+Vector tmpPos=[0,0,0,0];
+Vector tmpPos2=[0,0,0,0];
+
+Function CalcAngle;
+    // fist set the vectors to subtract
+    Set tmpPos NextPos ;
+    Sub tmpPos Pos;
+    Fpush tmpPos x ;
+    Fpush tmpPos z ;
+    // use atan2 to calc the angle
+    fatan ;
+    // this gives us the angle in radiuns so we convert it
+    Frad2deg ;
+    // finally we align it with the world geometry
+    Fnegate ;
+    Fpop yrot ;
+    AddD yrot 180.0 ;
+	// now we align the z rotation
+    //Y=Pos.y-NextPos.y;    
+    Set tmpPos NextPos ;
+    Set tmpPos2 Pos ; 
+    // swap the y components
+    Fpush Pos y ;    
+    Fpop tmpPos y;
+    Fpush NextPos y ;
+    Fpop tmpPos2 y ;
+    // now subtract the two
+    Sub tmpPos tmpPos2 ;
+    //zrot=asin(Y/r);
+    Length tmpPos ;
+    Fpush tmpPos y ;
+    Fdiv ;    
+    fasin ;
+	// convert it to degrees 
+    frad2deg;
+    Fpop zrot;
+End;
+
+
+CollideFunction
+
+    Set HitAgent FALSE;
+    Set HitEnvObj FALSE;
+  Call CollideAgainstEnvObj;
+  LoopBin ;
+     SphereSphereCollision HitAgent NextPos Radius2 NextPos Radius2;
+     if HitAgent == TRUE;
+	    {
+	 // calc average
+    	SetGlobalCollideFlag TRUE;
+		GetAgentI ADir Dir;
+     	Add ADir Dir;
+     	DivD ADir 2;
+        SetAgentI ADir ADir;
+        }
+    LoopBinEnd; 
+    
+End ;
+
+Vector EnvNoise=[0,0,0,0];
+
+Function CollideAgainstEnvObj;
+SphereEnvObjCollision HitEnvObj NextPos Radius2 EnvAvoidDir;
+      if HitEnvObj == TRUE;
+      {
+		SetD CentroidWeight 0;
+		SetD FlockAvoidWeight 10.0;
+		SetD EnvAvoidWeight 6129.0;
+      	Randomize EnvNoise 0.2 0.2 0.2;
+        Add EnvAvoidDir EnvNoise;
+      }
+      if HitEnvObj == FALSE;
+      {
+      SetD CentroidWeight 72.9;
+	  //Randomize CentroidWeight 60;
+      //AddD CentroidWeight 20;
+      SetD FlockAvoidWeight 5100.0;
+	  SetD EnvAvoidWeight 6120.0;
+      
+      }
+      
+      //Debug Pos;
+end;
+
+
+
+Function Move;
+ Set acceleration force;
+ Div acceleration mass;
+ Add Velocity acceleration;
+ Set nVel Velocity;
+ Div nVel VelDiv;
+ Add Pos Dir;
+ Mul Pos nVel;
+ Set NextPos Pos;
+ Add NextPos Dir;
+ Mul NextPos nVel;    	
+ Set ADir Dir; 
+End;
+
+
+Function CalcDir;
+ Mul ADir FlockAvoidWeight;
+ Mul CentroidDir CentroidWeight;
+ Mul EnvAvoidDir EnvAvoidWeight;
+ Set Dir ADir;
+ Add Dir CentroidDir;
+ Add Dir EnvAvoidDir;
+ GetNoiseValue NoiseValue Pos;
+ Add Dir NoiseValue;
+ Normalize Dir;
+//Set the force to be the current Direction so we can calculate the new acceleration
+//in the next iteration
+ Set force  Dir;
+//Store the Average dir to be the current dir
+//Set ADir Dir;
+End;
+
+

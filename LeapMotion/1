@@ -1,0 +1,215 @@
+objc[45517]: Class NotificationReceiver is implemented in both /Users/jmacey/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/QtWidgets and /Users/jmacey/Qt5.2.0/5.2.0/clang_64/lib/QtWidgets.framework/Versions/5/QtWidgets. One of the two will be used. Which one is undefined.
+Profile is 3 2
+ngl:: configured with GL version 4.1
+Compiling Shader nglTextVertex
+Compiling Shader nglTextFragment
+Linking nglTextShader
+linking Shader nglTextShader
+Compiling Shader nglColourVertex
+Compiling Shader nglColourFragment
+Linking nglColourShader
+linking Shader nglColourShader
+Compiling Shader nglDiffuseVertex
+Compiling Shader nglDiffuseFragment
+Linking nglDiffuseShader
+linking Shader nglDiffuseShader
+Compiling Shader nglToonVertex
+Compiling Shader nglToonFragment
+Linking nglToonShader
+linking Shader nglToonShader
+[+0.7071067690849304,+0.0000000000000000,-0.7071067690849304,-0.0000000000000000]
+[-0.4082482755184174,+0.8164965510368347,-0.4082482755184174,-0.0000000000000000]
+[+0.5773502588272095,+0.5773502588272095,+0.5773502588272095,-3.4641015529632568]
+[+0.0000000000000000,+0.0000000000000000,+0.0000000000000000,+1.0000000000000000]
+
+Initialized
+Service Connected
+Device Changed
+id: Connected Device: LP97465114160
+  isStreaming: true
+Connected
+Focus Gained
+Fingers size is 0
+
+
+
+
+
+
+
+
+
+
+
+Swipe id: +247, state: +1, direction: (-0.299953, 0.592098, 0.747962), speed: +1139.2103271484375000
+
+Swipe id: +247, state: +2, direction: (-0.28414, 0.619508, 0.731761), speed: +1157.9395751953125000
+
+Swipe id: +247, state: +2, direction: (-0.278489, 0.618341, 0.734914), speed: +1055.8695068359375000
+
+Swipe id: +247, state: +2, direction: (-0.262604, 0.637304, 0.724488), speed: +1066.5469970703125000
+
+Swipe id: +247, state: +2, direction: (-0.253698, 0.634148, 0.730407), speed: +1915.4991455078125000
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +2, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+Swipe id: +247, state: +3, direction: (-0.240091, 0.643563, 0.726762), speed: +823.2639770507812500
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key Tap id: +248, state: +3, position: (28.7485, 134.102, -138.29), direction: (0.43028, -0.822798, -0.371299)
+
+Key Tap id: +249, state: +3, position: (-61.4563, 97.4573, -55.1549), direction: (0.397647, -0.793735, -0.460285)
+
+
+
+
+
+
+
+
+
+
+
+Swipe id: +250, state: +1, direction: (0.0517051, 0.90074, 0.431271), speed: +1978.5771484375000000
+
+Swipe id: +250, state: +2, direction: (0.0681261, 0.885253, 0.460093), speed: +2114.3881835937500000
+
+Swipe id: +250, state: +2, direction: (0.0727169, 0.867463, 0.492158), speed: +2124.1809082031250000
+
+Swipe id: +250, state: +2, direction: (0.085136, 0.845102, 0.527782), speed: +2209.4094238281250000
+
+Swipe id: +250, state: +2, direction: (0.0844877, 0.82625, 0.556931), speed: +2324.6750488281250000
+
+Swipe id: +250, state: +2, direction: (0.0890962, 0.799509, 0.594009), speed: +2211.2543945312500000
+
+Swipe id: +250, state: +2, direction: (0.0829464, 0.783072, 0.616375), speed: +2076.0480957031250000
+
+Swipe id: +250, state: +2, direction: (0.0816037, 0.754047, 0.651731), speed: +2137.2221679687500000
+
+Swipe id: +250, state: +2, direction: (0.0736028, 0.737943, 0.670837), speed: +1881.5050048828125000
+
+Swipe id: +250, state: +2, direction: (0.0693732, 0.707374, 0.703427), speed: +1930.8139648437500000
+
+Swipe id: +250, state: +2, direction: (0.0646304, 0.6776, 0.732585), speed: +1705.7590332031250000
+
+Swipe id: +250, state: +2, direction: (0.0572192, 0.644568, 0.762402), speed: +1537.2725830078125000
+
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Device Changed
+id: Connected Device: LP97465114160
+  isStreaming: true
+Swipe id: +250, state: +2, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+Swipe id: +250, state: +3, direction: (0.0485596, 0.608561, 0.79202), speed: +1516.6057128906250000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key Tap id: +251, state: +3, position: (-85.9128, 198.789, 114.418), direction: (0.553363, 0.797552, -0.240209)
+
+
+
+
+
+
+
+
+
+
+
+
+Key Tap id: +252, state: +3, position: (92.4711, 104.925, -124.01), direction: (0.438118, -0.874706, -0.207224)
+
+Key Tap id: +253, state: +3, position: (-30.1056, 77.5483, -64.7333), direction: (0.51745, -0.787302, -0.335262)
+
+
+Shutting down NGL, removing VAO's and Shaders
+clearing VAOs
+Closing down shader manager
+removing shader program NULL
+removing shader program nglColourShader
+removing shader program nglDiffuseShader
+removing shader program nglTextShader
+removing shader program nglToonShader
+removing shader nglColourFragment
+removing shader nglColourVertex
+removing shader nglDiffuseFragment
+removing shader nglDiffuseVertex
+removing shader nglTextFragment
+removing shader nglTextVertex
+removing shader nglToonFragment
+removing shader nglToonVertex
+Exited

@@ -1,0 +1,34 @@
+
+typedef struct
+{
+	std::string name;
+	float tx;
+	float ty;
+	float width;
+	float height;
+	float rotation;
+	float friction;
+	float restitution;
+	float density;
+	b2BodyType type;
+}Body;
+
+
+
+Body bodies[]=
+{
+	{ "pCube1",0.0f,-5.75734941405f,40.0f,0.622222219046f,0.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube2",-15.1802719259f,-0.774503669689f,5.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube3",13.3989134856f,-0.619602935751f,5.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube4",-0.619602935751f,-0.464702201813f,5.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_kinematicBody },
+	{ "pCube5",0.0f,3.4852665136f,5.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube6",7.12543376114f,6.19602935751f,5.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube7",-8.82934183445f,8.2097388987f,5.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube8",-19.6723932101f,17.2714318341f,1.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_dynamicBody },
+	{ "pCube9",-11.2303032105f,17.1939814671f,1.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_dynamicBody },
+	{ "pCube10",1.31665623847f,17.7361340359f,1.0f,1.0f,0.0f,0.2f,0.0f,0.0f,b2_dynamicBody },
+	{ "pCube11",13.4763638526f,9.83619660505f,5.0f,1.0f,45.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube12",7.82248706386f,-2.78821321088f,5.0f,1.0f,45.0f,0.2f,0.0f,0.0f,b2_staticBody },
+	{ "pCube13",-6.25122289732f,12.0856976015f,2.5f,0.5f,0.0f,0.2f,0.0f,0.0f,b2_staticBody },
+};
+const static int numBodies=13;

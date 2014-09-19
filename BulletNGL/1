@@ -1,0 +1,123 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -c -pipe -msse -msse2 -msse3 -arch x86_64 -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.6 -Wall -W -Wno-unused-parameter -fPIE -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/Users/jmacey/qtsdk/5.2.1/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include/bullet -I/usr/local/include -I/usr/local/include -I/Users/jmacey/NGL/include -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib -o obj/main.o src/main.cpp
+In file included from src/main.cpp:6:
+In file included from include/NGLScene.h:10:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:20:
+In file included from /usr/local/include/bullet/btBulletCollisionCommon.h:32:
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h:76:15: warning: 'btConvexHullShape::project' hides overloaded virtual function [-Woverloaded-virtual]
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& minProj, btScalar& maxProj, btVector3& witnesPtMin,btVector3& witnesPtMax) const;
+                     ^
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexShape.h:55:15: note: hidden overloaded virtual function 'btConvexShape::project' declared here
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& min, btScalar& max) const;
+                     ^
+In file included from src/main.cpp:6:
+In file included from include/NGLScene.h:10:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:27:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h:26:
+/usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h:62:20: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+        SIMD_FORCE_INLINE       const __m128    get128() const
+                                ^~~~~~
+2 warnings generated.
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -c -pipe -msse -msse2 -msse3 -arch x86_64 -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.6 -Wall -W -Wno-unused-parameter -fPIE -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/Users/jmacey/qtsdk/5.2.1/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include/bullet -I/usr/local/include -I/usr/local/include -I/Users/jmacey/NGL/include -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib -o obj/OpenGLWindow.o src/OpenGLWindow.cpp
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -c -pipe -msse -msse2 -msse3 -arch x86_64 -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.6 -Wall -W -Wno-unused-parameter -fPIE -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/Users/jmacey/qtsdk/5.2.1/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include/bullet -I/usr/local/include -I/usr/local/include -I/Users/jmacey/NGL/include -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib -o obj/NGLScene.o src/NGLScene.cpp
+In file included from src/NGLScene.cpp:4:
+In file included from include/NGLScene.h:10:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:20:
+In file included from /usr/local/include/bullet/btBulletCollisionCommon.h:32:
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h:76:15: warning: 'btConvexHullShape::project' hides overloaded virtual function [-Woverloaded-virtual]
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& minProj, btScalar& maxProj, btVector3& witnesPtMin,btVector3& witnesPtMax) const;
+                     ^
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexShape.h:55:15: note: hidden overloaded virtual function 'btConvexShape::project' declared here
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& min, btScalar& max) const;
+                     ^
+In file included from src/NGLScene.cpp:4:
+In file included from include/NGLScene.h:10:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:27:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h:26:
+/usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h:62:20: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+        SIMD_FORCE_INLINE       const __m128    get128() const
+                                ^~~~~~
+In file included from src/NGLScene.cpp:14:
+include/CollisionShape.h:28:73: warning: control reaches end of non-void function [-Wreturn-type]
+    CollisionShape & operator=(const CollisionShape &_c){NGL_UNUSED(_c);}
+                                                                        ^
+3 warnings generated.
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -c -pipe -msse -msse2 -msse3 -arch x86_64 -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.6 -Wall -W -Wno-unused-parameter -fPIE -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/Users/jmacey/qtsdk/5.2.1/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include/bullet -I/usr/local/include -I/usr/local/include -I/Users/jmacey/NGL/include -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib -o obj/PhysicsWorld.o src/PhysicsWorld.cpp
+In file included from src/PhysicsWorld.cpp:1:
+In file included from include/PhysicsWorld.h:9:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:20:
+In file included from /usr/local/include/bullet/btBulletCollisionCommon.h:32:
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h:76:15: warning: 'btConvexHullShape::project' hides overloaded virtual function [-Woverloaded-virtual]
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& minProj, btScalar& maxProj, btVector3& witnesPtMin,btVector3& witnesPtMax) const;
+                     ^
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexShape.h:55:15: note: hidden overloaded virtual function 'btConvexShape::project' declared here
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& min, btScalar& max) const;
+                     ^
+In file included from src/PhysicsWorld.cpp:1:
+In file included from include/PhysicsWorld.h:9:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:27:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h:26:
+/usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h:62:20: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+        SIMD_FORCE_INLINE       const __m128    get128() const
+                                ^~~~~~
+In file included from src/PhysicsWorld.cpp:2:
+include/CollisionShape.h:28:73: warning: control reaches end of non-void function [-Wreturn-type]
+    CollisionShape & operator=(const CollisionShape &_c){NGL_UNUSED(_c);}
+                                                                        ^
+src/PhysicsWorld.cpp:318:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+src/PhysicsWorld.cpp:333:1: warning: control may reach end of non-void function [-Wreturn-type]
+}
+^
+src/PhysicsWorld.cpp:339:16: warning: comparison of integers of different signs: 'int' and 'size_type' (aka 'unsigned long') [-Wsign-compare]
+        for(int i=1; i<m_bodies.size(); ++i)
+                     ~^~~~~~~~~~~~~~~~
+src/PhysicsWorld.cpp:350:16: warning: comparison of integers of different signs: 'int' and 'size_type' (aka 'unsigned long') [-Wsign-compare]
+        for(int i=1; i<m_bodies.size(); ++i)
+                     ~^~~~~~~~~~~~~~~~
+7 warnings generated.
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -c -pipe -msse -msse2 -msse3 -arch x86_64 -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.6 -Wall -W -Wno-unused-parameter -fPIE -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/Users/jmacey/qtsdk/5.2.1/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include/bullet -I/usr/local/include -I/usr/local/include -I/Users/jmacey/NGL/include -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib -o obj/CollisionShape.o src/CollisionShape.cpp
+In file included from src/CollisionShape.cpp:1:
+In file included from include/CollisionShape.h:9:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:20:
+In file included from /usr/local/include/bullet/btBulletCollisionCommon.h:32:
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h:76:15: warning: 'btConvexHullShape::project' hides overloaded virtual function [-Woverloaded-virtual]
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& minProj, btScalar& maxProj, btVector3& witnesPtMin,btVector3& witnesPtMax) const;
+                     ^
+/usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexShape.h:55:15: note: hidden overloaded virtual function 'btConvexShape::project' declared here
+        virtual void project(const btTransform& trans, const btVector3& dir, btScalar& min, btScalar& max) const;
+                     ^
+In file included from src/CollisionShape.cpp:1:
+In file included from include/CollisionShape.h:9:
+In file included from /usr/local/include/bullet/btBulletDynamicsCommon.h:27:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h:21:
+In file included from /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h:26:
+/usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h:62:20: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+        SIMD_FORCE_INLINE       const __m128    get128() const
+                                ^~~~~~
+In file included from src/CollisionShape.cpp:1:
+include/CollisionShape.h:28:73: warning: control reaches end of non-void function [-Wreturn-type]
+    CollisionShape & operator=(const CollisionShape &_c){NGL_UNUSED(_c);}
+                                                                        ^
+3 warnings generated.
+/Users/jmacey/qtsdk/5.2.1/clang_64/bin/moc -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D__APPLE__ -D__GNUC__=4 -I/Users/jmacey/qtsdk/5.2.1/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include/bullet -I/usr/local/include -I/usr/local/include -I/Users/jmacey/NGL/include -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib include/OpenGLWindow.h -o moc/moc_OpenGLWindow.cpp
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -c -pipe -msse -msse2 -msse3 -arch x86_64 -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.6 -Wall -W -Wno-unused-parameter -fPIE -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/Users/jmacey/qtsdk/5.2.1/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include/bullet -I/usr/local/include -I/usr/local/include -I/Users/jmacey/NGL/include -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/jmacey/qtsdk/5.2.1/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AGL.framework/Headers -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib -o obj/moc_OpenGLWindow.o moc/moc_OpenGLWindow.cpp
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.6 -o BulletNGL obj/main.o obj/OpenGLWindow.o obj/NGLScene.o obj/PhysicsWorld.o obj/CollisionShape.o obj/moc_OpenGLWindow.o   -F/Users/jmacey/qtsdk/5.2.1/clang_64/lib -L/usr/local/lib -lBulletDynamics -lBulletCollision -lLinearMath -L//Users/jmacey/NGL/lib -l NGL -lm -framework QtOpenGL -framework QtWidgets -framework QtGui -framework QtCore -framework OpenGL -framework AGL 
+Undefined symbols for architecture x86_64:
+  "___sincosf_stret", referenced from:
+      btDiscreteDynamicsWorld::debugDrawConstraint(btTypedConstraint*) in libBulletDynamics.a(btDiscreteDynamicsWorld.o)
+      btConvexConvexAlgorithm::processCollision(btCollisionObjectWrapper const*, btCollisionObjectWrapper const*, btDispatcherInfo const&, btManifoldResult*) in libBulletCollision.a(btConvexConvexAlgorithm.o)
+      btConvexPlaneCollisionAlgorithm::processCollision(btCollisionObjectWrapper const*, btCollisionObjectWrapper const*, btDispatcherInfo const&, btManifoldResult*) in libBulletCollision.a(btConvexPlaneCollisionAlgorithm.o)
+      btConeTwistConstraint::calcAngleInfo2(btTransform const&, btTransform const&, btMatrix3x3 const&, btMatrix3x3 const&) in libBulletDynamics.a(btConeTwistConstraint.o)
+      btConeTwistConstraint::GetPointForAngle(float, float) const in libBulletDynamics.a(btConeTwistConstraint.o)
+      btConeTwistConstraint::setMotorTargetInConstraintSpace(btQuaternion const&) in libBulletDynamics.a(btConeTwistConstraint.o)
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [BulletNGL] Error 1

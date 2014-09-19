@@ -1,0 +1,24 @@
+g++ -g -Wall -DUNIX -funroll-loops -O3 -DUNIX -DDARWIN  -bind_at_load -I../include -I/usr/include -I/Users/jmacey/GraphicsLib/include -I/usr/local/   -c FlockMain.cpp
+FlockMain.cpp:43: error: expected constructor, destructor, or type conversion before '*' token
+FlockMain.cpp:84: error: 'Point3' does not name a type
+FlockMain.cpp:85: error: 'Point3' does not name a type
+FlockMain.cpp:86: error: 'Vector' does not name a type
+FlockMain.cpp: In function 'void display()':
+FlockMain.cpp:274: error: 'Point3' was not declared in this scope
+FlockMain.cpp:274: error: expected `;' before 'cEye'
+FlockMain.cpp:275: error: expected `;' before 'cLook'
+FlockMain.cpp:276: error: 'cLook' was not declared in this scope
+FlockMain.cpp:276: error: 'cEye' was not declared in this scope
+FlockMain.cpp:276: error: 'UP' was not declared in this scope
+FlockMain.cpp:305: error: 'DrawAxisSimple' was not declared in this scope
+FlockMain.cpp: In function 'void Display2()':
+FlockMain.cpp:332: error: 'DrawAxisSimple' was not declared in this scope
+FlockMain.cpp: In function 'void Display3()':
+FlockMain.cpp:351: error: 'DrawAxisSimple' was not declared in this scope
+FlockMain.cpp: In function 'void Display4()':
+FlockMain.cpp:371: error: 'DrawAxisSimple' was not declared in this scope
+FlockMain.cpp: In function 'void InitGL()':
+FlockMain.cpp:389: error: 'EYE' was not declared in this scope
+FlockMain.cpp:389: error: 'LOOK' was not declared in this scope
+FlockMain.cpp:389: error: 'UP' was not declared in this scope
+make: *** [FlockMain.o] Error 1

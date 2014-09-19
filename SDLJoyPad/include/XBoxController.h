@@ -1,0 +1,67 @@
+#ifndef XBOXCONTROLLER_H__
+#define XBOXCONTROLLER_H__
+
+namespace
+{
+
+
+enum XBOXAxis
+{
+  LEFTSTICKLR, //0
+  LEFTSTICKUD, // 1
+  LEFTTRIGGER, // 2
+  RIGHTSTICKLR, //3
+  RIGHTSTICKUD, // 4
+  RIGHTTRIGGER // 5
+};
+
+// So mappings are different for the same controller on different os!
+#ifdef DARWIN
+enum XBOXButtons
+{
+  XBOXBUTTONA, // 0
+  XBOXBUTTONB, // 1
+  XBOXBUTTONX, // 2
+  XBOXBUTTONY, // 3
+  XBOXBUTTONLBUMP, // 4
+  XBOXBUTTONRBUMP, // 5
+  XBOXBUTTONLHAT, //6
+  XBOXBUTTONRHAT, // 7
+  XBOXBUTTONSTART, // 8
+  XBOXBUTTONBACK, //9
+  NONE, //10 is not allocated
+  XBOXDPADUP, // 11
+  XBOXDPADDOWN, //12
+  XBOXDPADLEFT, //13
+  XBOXDPARRIGHT //14
+};
+#endif
+
+#ifdef LINUX
+enum XBOXButtons
+{
+  XBOXBUTTONA, // 0
+  XBOXBUTTONB, // 1
+  XBOXBUTTONX, // 2
+  XBOXBUTTONY, // 3
+  XBOXBUTTONLBUMP, // 4
+  XBOXBUTTONRBUMP, // 5
+  XBOXBUTTONSTART, //6
+  NONE, // 7
+  XBOXBUTTONLHAT, // 8
+  XBOXBUTTONRHAT, // 9
+  XBOXDPADUP, // 10
+  XBOXDPADDOWN, //11
+  XBOXDPADLEFT, //12
+  XBOXDPARRIGHT, //13
+  XBOXBUTTONBACK // 14
+};
+#endif
+
+
+}
+
+
+
+
+#endif

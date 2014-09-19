@@ -1,0 +1,36 @@
+WorldBBox 0 0 0 80.0 80.0 40.0 5 2 5 520
+OutputFile birds.out
+OutFileFrameSkip 1
+UpdateRate 1
+
+
+//Camera 0 10 40 0 0 0 0 1 0 800 660 45.0 1.33 0.1 450.0
+Camera 0 80 0 0 0 0 0 0 1 800 660 45.0 1.33 0.1 450.0
+Randomize
+
+//AgentEmitter 0.0 0 0 120 0.7 0.3 0.33 0.6 0 0
+GroundPlane -20 0 0.4 0 0.4 
+EnvObj 0.0 0.0 0.0 6.0 6.0 6.0 5.0
+EnvObj -20.0 0.0 0.0 6.0 6.0 6.0 5.0
+EnvObj 20.0 0.0 0.0 6.0 6.0 6.0 5.0
+
+EnvObj 0.0 -6.0 0.0 6.0 6.0 6.0 5.0
+EnvObj -20 -6.0 0.0 6.0 6.0 6.0 5.0
+EnvObj  20.0 -6.0 0.0 6.0 6.0 6.0 5.0
+
+
+EnvObj 0.0 -12.0 0.0 6.0 6.0 6.0 5.0
+EnvObj -20 -12 0.0 6.0 6.0 6.0 5.0
+EnvObj 20.0 -12.0 0.0 6.0 6.0 6.0 5.0
+
+EnvObj 0.0 -18.0 0.0 6.0 6.0 6.0 5.0
+EnvObj -20 -18 0.0 6.0 6.0 6.0 5.0
+EnvObj 20.0 -18.0 0.0 6.0 6.0 6.0 5.0
+
+
+//RotateObj 1 20 1 0 1
+//RotateObj 2 45 1 1 1
+AgentEmitter -30.0 0 0 1500 0.7 0.3 0.33 0.6 0 0 EnvObj.comp
+//AgentEmitter -30.0 0.0 0.0 220 3.0 1.2 1.2 2.9 0 0
+PathFollow 0 -20 0 0 -10 0 0 10 0 0  20 0 0
+lockedCentroid 0 0 0 0
