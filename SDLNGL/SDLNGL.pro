@@ -1,29 +1,41 @@
-QT -= core
-QT -=opengl
-QT -=xml
+# This specifies the exe name
+TARGET=SDLNGL
+# where to put the .o files
+OBJECTS_DIR=obj
+# core Qt Libs to use add more here if needed.
+QT+=gui opengl core
+
 # as I want to support 4.8 and 5 this will set a flag for some of the mac stuff
 # mainly in the types.h file for the setMacVisual which is native in Qt5
 isEqual(QT_MAJOR_VERSION, 5) {
-		cache()
-		DEFINES +=QT5BUILD
+	cache()
+	DEFINES +=QT5BUILD
 }
-TARGET=SDLNGL
+# this demo uses SDL so add the paths using the sdl2-config tool
+QMAKE_CXXFLAGS+=$$system(sdl2-config  --cflags)
+message(output from sdl2-config --cflags added to CXXFLAGS= $$QMAKE_CXXFLAGS)
+
+LIBS+=$$system(sdl2-config  --libs)
+message(output from sdl2-config --libs added to LIB=$$LIBS)
+
+
+
+# where to put moc auto generated files
+MOC_DIR=moc
+# on a mac we don't create a .app bundle file ( for ease of multiplatform use)
 CONFIG-=app_bundle
+# Auto include all .cpp files in the project src directory (can specifiy individually if required)
+SOURCES+= $$PWD/src/*.cpp
+# same for the .h files
+HEADERS+= $$PWD/include/*.h
+# and add the include dir into the search path for Qt and make
+INCLUDEPATH +=./include
+# where our exe is going to live (root of project)
 DESTDIR=./
-OBJECTS_DIR=obj
-SOURCES=src/main.cpp \
-				src/NGLDraw.cpp
-
-OTHER_FILES+=shaders/PhongVertex.glsl \
-						 shaders/PhongFragment.glsl
-
-HEADERS+=include/NGLDraw.h
-# add the ngl lib
-
-LIBS +=  -L/$(HOME)/NGL/lib -l NGL
-# this is where to look for includes
-INCLUDEPATH += $$(HOME)/NGL/include/
-INCLUDEPATH +=include
+# add the glsl shader files
+OTHER_FILES+= shaders/*.glsl
+# were are going to default to a console app
+CONFIG += console
 # note each command you add needs a ; as it will be run as a single line
 # first check if we are shadow building or not easiest way is to check out against current
 !equals(PWD, $${OUT_PWD}){
@@ -42,37 +54,37 @@ INCLUDEPATH +=include
 }
 # use this to suppress some warning from boost
 QMAKE_CXXFLAGS_WARN_ON += "-Wno-unused-parameter"
+# basic compiler flags (not all appropriate for all platforms)
 QMAKE_CXXFLAGS+= -msse -msse2 -msse3
 macx:QMAKE_CXXFLAGS+= -arch x86_64
-macx:INCLUDEPATH+=/usr/local/boost/
+macx:INCLUDEPATH+=/usr/local/include/
+linux-g++:QMAKE_CXXFLAGS +=  -march=native
+linux-g++-64:QMAKE_CXXFLAGS +=  -march=native
+# define the _DEBUG flag for the graphics lib
+DEFINES +=NGL_DEBUG
 
-QMAKE_CXXFLAGS+=$$system(sdl2-config  --cflags)
-message(output from sdl2-config --cflags added to CXXFLAGS= $$QMAKE_CXXFLAGS)
+unix:LIBS += -L/usr/local/lib
+# add the ngl lib
+unix:LIBS +=  -L/$(HOME)/NGL/lib -l NGL
 
-LIBS+=$$system(sdl2-config  --libs)
-message(output from sdl2-config --libs added to LIB=$$LIBS)
-
-
-macx:INCLUDEPATH+=/usr/local/include
-LIBS += -L/usr/local/lib
-macx:LIBS+= -framework OpenGL
-macx:DEFINES+=DARWIN
-# now if we are under unix and not on a Mac (i.e. linux) define GLEW
+# now if we are under unix and not on a Mac (i.e. linux)
 linux-*{
 		linux-*:QMAKE_CXXFLAGS +=  -march=native
-		linux-*:DEFINES+=GL42
 		DEFINES += LINUX
 }
+DEPENDPATH+=include
+# if we are on a mac define DARWIN
+macx:DEFINES += DARWIN
+# this is where to look for includes
+INCLUDEPATH += $$(HOME)/NGL/include/
 
 win32: {
-				PRE_TARGETDEPS+=C:/NGL/lib/NGL.lib
-				INCLUDEPATH+=-I c:/boost
-				DEFINES+=GL42
-				DEFINES += WIN32
-				DEFINES+=_WIN32
-				DEFINES+=_USE_MATH_DEFINES
-				LIBS += -LC:/NGL/lib/ -lNGL
-				DEFINES+=NO_DLL
+        PRE_TARGETDEPS+=C:/NGL/lib/NGL.lib
+        INCLUDEPATH+=-I c:/boost
+        DEFINES+=GL42
+        DEFINES += WIN32
+        DEFINES+=_WIN32
+        DEFINES+=_USE_MATH_DEFINES
+        LIBS += -LC:/NGL/lib/ -lNGL
+        DEFINES+=NO_DLL
 }
-
-

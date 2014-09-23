@@ -4,7 +4,8 @@
 *.o
 # qt files
 *.pro.user*
-.qmake.cache
+.qmake*
+Makefile
 # Compiled Dynamic libraries
 *.so
 *.dylib
